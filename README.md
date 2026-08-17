@@ -1,120 +1,91 @@
-[![PyPI Downloads](https://static.pepy.tech/badge/deardir)](https://pepy.tech/projects/deardir)
-[![codecov](https://codecov.io/gh/deardir/deardir/branch/main/graph/badge.svg)](https://codecov.io/gh/deardir/deardir)
-
 # deardir
 
-**Validate and optionally create project directory structures from JSON or YAML schema files.**
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/deardir) [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-certified-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/) [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/certification/criteria) [![Energy](https://api.green-coding.io/v1/ci/badge/get?repo=Interested-Deving-1896%2Fdeardir&branch=main&workflow=eco-audit.yml)](https://metrics.green-coding.io/ci-index.html)
 
-pypi ref: https://pypi.org/project/deardir/
 
----
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-## ➡️ Features
+## Architecture
 
-- Validate file/folder structures using declarative schema files
-- Supports `.json`, `.yaml`, `.yml`, Python `dict` or `list` objects
-- Optionally auto-creates missing directories and files
-- Async live mode to continuously monitor a structure
-- Python API and CLI interface
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
----
+## Install
 
-## ➡️ Installation
-
-```bash
-pip install deardir
-```
-
-Or if you are developing locally:
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
 ```bash
-poetry install
+git clone https://github.com/Interested-Deving-1896/deardir.git
+cd deardir
 ```
 
----
+## Usage
 
-## ➡️ Example Schema
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-### `schema.yml`
+## Configuration
 
-```yaml
-- data
-- src:
-    - __init__.py
-    - main.py
-    - utils:
-        - helpers.py
-- README.md
-- pyproject.toml
-```
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
----
+## CI
 
-## ➡️ Usage
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-### Python
+## Mirror chain
 
-```python
-from deardir import DearDir
-from pathlib import Path
-
-dd = DearDir(root_paths=[Path(".")], schema=Path("schema.yml"))
-dd.create_missing = True
-dd.validate()
-
-print(dd.missing)   # Set of missing paths
-print(dd.created)   # Set of paths that were created
-```
-
-### Async live mode
-
-```python
-
-dd = DearDir([Path(".")], "schema.yml")
-dd.create_missing = True
-
-dd.live(interval=10, duration=60, mode=1)
-
-# Thread
-dd.live(interval=10, duration=60, mode=2)
-
-# Synchron
-dd.live(interval=10, duration=60, mode=0)
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/deardir`](https://github.com/Interested-Deving-1896/deardir) and mirrored through:
 
 ```
-
----
-
-### CLI
-
-```bash
-deardir
-deardir --help
-deardir check --help
-deardir --version
-deardir check ./Tests --schema schema.yaml 
-deardir check ./Tests --schema schema.yaml --create
-#ASYNC LIVE WATCHER:
-deardir watch ./Tests --schema schema.yaml --create --interval 1 --duration 10
+Interested-Deving-1896/deardir  ──►  OpenOS-Project-OSP/deardir  ──►  OpenOS-Project-Ecosystem-OOC/deardir
 ```
 
----
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-## ➡️ Future Ideas (help wanted!)
+## Contributors
 
-- Improved CLI and JSON/HTML/Markdown reporting with colorized output  
-- Support for optional files/folders and conditional rules in schema  
-- Custom user-defined validation hooks  
-- Auto-fix mode (e.g. create from templates, autofill missing entries)  
-- File system watch mode with live validation (`--watch`)  
-- GUI or web interface for drag-and-drop validation  
-- GitHub Action / CI/CD integration  
-- Multi-language support (English, German, ...)
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
 
----
+## Origins
 
-## 📄 License
+<!-- AI:start:origins -->
+_Original project — no upstream influences recorded._
+<!-- AI:end:origins -->
 
-MIT
+## Resources
 
-## Tests
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## Accessibility
+
+<!-- AI:start:accessibility -->
+This repo uses automated accessibility auditing via `check-accessibility.yml`.
+
+Checks include: CODEOWNERS ownership coverage, README screen-reader compatibility,
+WCAG 2.1 AA HTML compliance, audio overview (espeak-ng), and Braille output (liblouis).
+
+
+
+
+Run the [Check Accessibility](https://github.com/Interested-Deving-1896/deardir/actions/workflows/check-accessibility.yml)
+workflow to generate the first report and accessibility artifacts.
+See [DOCS/accessibility.md](https://github.com/Interested-Deving-1896/deardir/blob/main/DOCS/accessibility.md) for the full reference.
+<!-- AI:end:accessibility -->
+
+## License
+
+<!-- AI:start:license -->
+[MIT](https://github.com/Interested-Deving-1896/deardir/blob/main/LICENSE.md) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
